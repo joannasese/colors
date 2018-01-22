@@ -12,6 +12,9 @@ class App extends Component {
               <Navbar.Brand>
                 <a href="/">React App</a>
               </Navbar.Brand>
+              <Navbar.Brand>
+                <a href="https://youtu.be/fLoT0rqkMYI">Random Joy</a>
+              </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
           </Grid>
@@ -21,7 +24,7 @@ class App extends Component {
             <h1>Welcome to React</h1>
             <p>
               <Button
-                bsStyle="success"
+                bsStyle="default"
                 bsSize="large"
                 href="http://react-bootstrap.github.io/components.html"
                 target="_blank">
