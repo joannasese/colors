@@ -4,6 +4,7 @@ import './App.css';
 // import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import LittleJoy from '../components/LittleJoy';
+import ColorBox from '../components/ColorBox';
 
 // class App extends Component {
 //   render() {
@@ -47,6 +48,7 @@ const App = (props) => {
       <div className="app">
         <NavBar />
         <Route exact path="/little-joy" component={LittleJoy} />
+        <Route exact path="/color-box" component={ColorBox} />
       </div>
     </Router>
   );
