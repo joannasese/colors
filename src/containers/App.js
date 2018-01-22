@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
+// import { Grid, Navbar, Jumbotron, Button } from 'react-bootstrap';
 import NavBar from '../components/NavBar';
 import LittleJoy from '../components/LittleJoy';
 
