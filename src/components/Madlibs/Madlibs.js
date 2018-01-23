@@ -18,10 +18,11 @@ class Madlibs extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.store.dispatch({
-      type: 'ADD_VERB',
-      verb: this.state,
-    });
+    this.props.addVerb();
+    // this.props.store.dispatch({
+    //   type: 'ADD_VERB',
+    //   verb: this.state,
+    // });
     this.setState({
       verb: '',
     });
@@ -49,4 +50,17 @@ const mapStateToProps = (state) => {
   return { verb: state.verb };
 };
 
-export default connect(mapStateToProps)(Madlibs);
+const mapDispatchToProps = () => {
+  return {
+    addVerb: addVerb
+  }
+}
+
+const addVerb = (word) => {
+  return {
+    type: 'ADD_VERB',
+    verb: this.state,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Madlibs);
