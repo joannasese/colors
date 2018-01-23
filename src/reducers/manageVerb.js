@@ -1,4 +1,6 @@
-export default function manageVerb(state = {
+import React from 'react';
+
+function manageVerb(state = {
   verbs: [],
 }, action) {
   switch (action.type) {
@@ -6,6 +8,7 @@ export default function manageVerb(state = {
       return { verbs: state.verbs.concat(action.verb) }
     default:
       return state;
-      console.log(verbs)
   }
 }
+
+export default manageVerb;
