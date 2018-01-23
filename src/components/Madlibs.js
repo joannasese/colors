@@ -6,13 +6,13 @@ class Madlibs extends React.Component {
     super()
 
     this.state = {
-      text: '',
+      verb: '',
     };
   }
 
   handleChange(event) {
     this.setState({
-      text: event.target.value
+      verb: event.target.value
     });
   }
 
@@ -22,29 +22,28 @@ class Madlibs extends React.Component {
       type: 'ADD_VERB',
       verb: this.state,
     });
-  //   this.setState({
-  //     verb: '',
-  //   });
+    this.setState({
+      verb: '',
+    });
   }
 
   render() {
+    console.log({Verbs})
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
             <label>Submit a verb:</label>
-            <input type="text" onChange={(event) => this.handleChange(event)} />
+            <input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
           </p>
           <input type="submit" />
-          {this.state.text}
         </form>
-
         <p>Form to submit noun. (persist in data array, ditto for all below?)</p>
         <p>Form to submit adjective.</p>
         <p>Form to submit verb.</p>
         <p>Submit button.</p>
         <p>On submit, generate madlib.</p>
-
+        <p>The ADJ NOUN likes to <strong>{this.state.verb}</strong> while drinking his coffee.</p>
       </div>
     )
   }
