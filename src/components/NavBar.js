@@ -15,7 +15,7 @@ class NavBar extends Component {
       <div>
         <Navbar>
           <Nav>
-            <LinkContainer to='/'>
+            <LinkContainer to='/' exact="true">
               <NavItem exact>Home</NavItem>
             </LinkContainer>
             <LinkContainer to='/color-box'>
