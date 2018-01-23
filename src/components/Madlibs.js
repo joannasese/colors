@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { verbs } from './data';
 import Verbs from './Verbs'
 
@@ -46,4 +47,5 @@ class Madlibs extends React.Component {
   }
 }
 
-export default Madlibs;
+// export default Madlibs;
+export default connect(null)(Madlibs);
