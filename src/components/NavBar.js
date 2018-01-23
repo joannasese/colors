@@ -1,29 +1,34 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, {Component} from 'react';
+import { Grid, Navbar, Nav, NavItem, Jumbotron, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import LittleJoy from '../components/LittleJoy';
+import ColorBox from '../components/ColorBox';
+import Home from '../components/Home';
+import { NavLink, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 
-const link = {
-  width: '100px',
-  padding: '12px',
-  margin: '0 6px 6px',
-  background: 'blue',
-  textDecoration: 'none',
-  color: 'white',
-}
-
-const NavBar = () => {
-  return (
-    <div className="navbar">
-      <NavLink to="/" exact style={link} activeStyle={{
-        background: 'darkblue'
-      }}>Home</NavLink>
-      <NavLink to="/color-box" exact style={link} activeStyle={{
-        background: 'darkblue'
-      }}>Color Box</NavLink>
-      <NavLink to="/little-joy" exact style={link} activeStyle={{
-        background: 'darkblue'
-      }}>Little Joy</NavLink>
-    </div>
-  );
+class NavBar extends Component {
+  render(){
+    return (
+      <div>
+        <Navbar>
+          <Nav>
+            <LinkContainer to='/'>
+              <NavItem exact>Home</NavItem>
+            </LinkContainer>
+            <LinkContainer to='/color-box'>
+              <NavItem>Color Box</NavItem>
+            </LinkContainer>
+            <LinkContainer to='/little-joy'>
+              <NavItem>Little Joy</NavItem>
+            </LinkContainer>
+          </Nav>
+        </Navbar>
+      </div>
+    );
+  }
 };
 
 export default NavBar;
