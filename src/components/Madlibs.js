@@ -1,5 +1,6 @@
 import React from 'react';
 import { verbs } from './data';
+import Verbs from './Verbs'
 
 class Madlibs extends React.Component {
   constructor(props){
