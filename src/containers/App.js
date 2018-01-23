@@ -5,7 +5,7 @@ import NavBar from '../components/NavBar';
 import LittleJoy from '../components/LittleJoy';
 import ColorBox from '../components/ColorBox';
 import Home from '../components/Home';
-import Madlibs from '../components/Madlibs';
+import Madlibs from '../components/Madlibs/Madlibs';
 
 //stateless component
 const App = (props) => {

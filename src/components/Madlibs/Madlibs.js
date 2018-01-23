@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Verbs from './Verbs';
+import { connect } from 'react-redux';
 
 class Madlibs extends React.Component {
   constructor(props){
@@ -29,6 +30,7 @@ class Madlibs extends React.Component {
   render() {
     return (
       <div>
+      <p>Number of verbs in Verbs array: {Verbs.length}</p>
         <p>It's madlib time! Provide a noun, an adjective and a verb. We'll give you a wacky phrase in return!</p>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
@@ -37,15 +39,14 @@ class Madlibs extends React.Component {
           </p>
           <input type="submit" />
         </form>
-        <p>Form to submit noun. (persist in data array, ditto for all below?)</p>
-        <p>Form to submit adjective.</p>
-        <p>FORM to submit verb.</p>
-        <p>Submit button.</p>
-        <p>On submit, generate madlib.</p>
         <p>The ADJ NOUN likes to <strong>{this.state.verb}</strong> while drinking his coffee.</p>
       </div>
     )
   }
 }
 
-export default Madlibs;
+const mapStateToProps = (state) => {
+  return { verb: state.verb };
+};
+
+export default connect(mapStateToProps)(Madlibs);

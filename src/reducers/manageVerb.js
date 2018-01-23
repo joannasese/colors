@@ -1,7 +1,8 @@
 import React from 'react';
+import Verbs from '../components/Madlibs/Verbs';
 
 function manageVerb(state = {
-  verbs: [],
+  verbs: []
 }, action) {
   switch (action.type) {
     case 'ADD_VERB':

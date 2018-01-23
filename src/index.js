@@ -19,6 +19,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
 store.dispatch({ type: '@@INIT' });
 registerServiceWorker();
