@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
-import { Grid, Navbar, Nav, NavItem, Jumbotron, Button } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import LittleJoy from '../components/LittleJoy';
-import ColorBox from '../components/ColorBox';
-import Home from '../components/Home';
-import { NavLink, Link } from 'react-router-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
+import { IndexLinkContainer, LinkContainer } from 'react-router-bootstrap';
 
 class NavBar extends Component {
   render(){
@@ -15,9 +10,9 @@ class NavBar extends Component {
       <div>
         <Navbar>
           <Nav>
-            <LinkContainer to='/' exact="true">
-              <NavItem exact>Home</NavItem>
-            </LinkContainer>
+            <IndexLinkContainer to='/' >
+              <NavItem>Home</NavItem>
+            </IndexLinkContainer>
             <LinkContainer to='/color-box'>
               <NavItem>Color Box</NavItem>
             </LinkContainer>
