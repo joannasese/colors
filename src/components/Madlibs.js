@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import Verbs from './Verbs';
 
 class Madlibs extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(){
+    super()
 
     this.state = {
-      verb: '',
-    }
+      text: '',
+    };
   }
 
   handleChange(event) {
     this.setState({
-      verb: event.target.value
+      text: event.target.value
     });
   }
 
@@ -22,9 +22,9 @@ class Madlibs extends React.Component {
       type: 'ADD_VERB',
       verb: this.state,
     });
-    this.setState({
-      verb: '',
-    });
+  //   this.setState({
+  //     verb: '',
+  //   });
   }
 
   render() {
@@ -33,9 +33,10 @@ class Madlibs extends React.Component {
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
             <label>Submit a verb:</label>
-            <input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
+            <input type="text" onChange={(event) => this.handleChange(event)} />
           </p>
           <input type="submit" />
+          {this.state.text}
         </form>
 
         <p>Form to submit noun. (persist in data array, ditto for all below?)</p>
@@ -43,8 +44,7 @@ class Madlibs extends React.Component {
         <p>Form to submit verb.</p>
         <p>Submit button.</p>
         <p>On submit, generate madlib.</p>
-        <Verbs store={this.props.store} />
-        
+
       </div>
     )
   }
