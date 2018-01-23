@@ -1,6 +1,7 @@
 import React from 'react';
 import { videos } from './data';
 
+//stateless component
 const LittleJoy = () => {
   return (
     <div>

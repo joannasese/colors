@@ -1,6 +1,6 @@
 import React from 'react';
 
-//presentation component
+//stateless component
 const Home = () => {
   return (
     <h1>Let's procrastinate!</h1>

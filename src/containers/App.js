@@ -6,7 +6,7 @@ import LittleJoy from '../components/LittleJoy';
 import ColorBox from '../components/ColorBox';
 import Home from '../components/Home';
 
-// presentation component
+//stateless component
 const App = (props) => {
   return (
     <Router>
