@@ -18,6 +18,9 @@ const NavBar = () =>
         <LinkContainer to='/little-joy'>
           <NavItem>Little Joy</NavItem>
         </LinkContainer>
+        <LinkContainer to='/madlibs'>
+          <NavItem>Madlibs</NavItem>
+        </LinkContainer>
       </Nav>
     </Navbar>
   </div>

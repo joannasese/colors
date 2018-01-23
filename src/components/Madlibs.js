@@ -1,9 +1,17 @@
 import React from 'react';
 import { verbs } from './data';
 
-Form to submit noun. (persist in data array, ditto for all below)
-Form to submit adjective.
-Form to submit verb.
-Submit button.
+const Madlibs = () => {
+  return (
+    <div>
+    <p>Form to submit noun. (persist in data array, ditto for all below)</p>
+    <p>Form to submit adjective.</p>
+    <p>Form to submit verb.</p>
+    <p>Submit button.</p>
 
-On submit, generate madlib.
+    <p>On submit, generate madlib.</p>
+    </div>
+  )
+}
+
+export default Madlibs;
