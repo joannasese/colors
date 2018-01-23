@@ -6,7 +6,7 @@ function manageVerb(state = {
 }, action) {
   switch (action.type) {
     case 'ADD_VERB':
-      return { verbs: state.verbs.concat(action.verb.text) }
+      return { verbs: state.verbs.concat(action.verb) }
     default:
       return state;
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Verbs from './Verbs';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class Madlibs extends React.Component {
   constructor(props){
@@ -18,14 +19,11 @@ class Madlibs extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addVerb();
-    // this.props.store.dispatch({
-    //   type: 'ADD_VERB',
-    //   verb: this.state,
+      console.log(this.state.verb)
+    this.props.addVerb(this.state);
+    // this.setState({
+    //   verb: '',
     // });
-    this.setState({
-      verb: '',
-    });
   }
 
   render() {
@@ -36,7 +34,11 @@ class Madlibs extends React.Component {
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
             <label>Verb: </label>
-            <input type="text" value={this.state.text} onChange={(event) => this.handleChange(event)} />
+            <input
+              type="text"
+              value={this.state.verb}
+              onChange={(event) => this.handleChange(event)}
+            />
           </p>
           <input type="submit" />
         </form>
@@ -46,21 +48,23 @@ class Madlibs extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { verb: state.verb };
-};
+// const mapStateToProps = (state) => {
+//   return { verb: state.verb };
+// };
 
-const mapDispatchToProps = () => {
-  return {
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
     addVerb: addVerb
-  }
-}
+  }, dispatch);
+};
 
 const addVerb = (word) => {
   return {
     type: 'ADD_VERB',
-    verb: this.state,
+    verb: word,
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Madlibs);
+export default connect(null, mapDispatchToProps)(Madlibs);
+
+// export const ConnectedMadlibs = connect(null, mapDispatchToProps)(Madlibs);
