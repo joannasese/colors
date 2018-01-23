@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
 import NavBar from '../components/NavBar';
 import LittleJoy from '../components/LittleJoy';
 import ColorBox from '../components/ColorBox';
 import Home from '../components/Home';
 
+// presentation component
 const App = (props) => {
   return (
     <Router>
