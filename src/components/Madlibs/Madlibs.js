@@ -19,7 +19,7 @@ class Madlibs extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addVerb(this.state);
+    this.props.addVerb(this.state.verb);
   }
 
   render() {
@@ -39,6 +39,7 @@ class Madlibs extends React.Component {
           <input type="submit" />
         </form>
         <p>The ADJ NOUN likes to <strong>{this.state.verb}</strong> while drinking his coffee.</p>
+        <ConnectedVerbs/>
       </div>
     )
   }

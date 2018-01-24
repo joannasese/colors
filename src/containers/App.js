@@ -12,7 +12,7 @@ const App = (props) => {
   return (
     <Router>
       <div className="app">
-        <NavBar />
+        <NavBar title="Can you see me?"/>
         <Route exact path="/" component={Home} />
         <Route exact path="/color-box" component={ColorBox} />
         <Route exact path="/little-joy" component={LittleJoy} />
