@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 
 const Verbs = ({verbs}) =>
   <div>
-   {verbs.map(verb =>
-     <h2>I want to <strong>{verb}</strong> it.</h2>
+   {verbs.map((verb, index) =>
+     <h2 key={index}>I want to <strong>{verb}</strong> it.</h2>
    )}
+   { console.log({verbs})}
   </div>
 
 // export class Verbs extends Component {
