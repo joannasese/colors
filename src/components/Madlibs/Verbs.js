@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Verbs extends Component {
+export class Verbs extends Component {
 
   render() {
 
@@ -18,9 +18,9 @@ class Verbs extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
+function mapStateToProps  (state){
   return { verbs: state.verbs };
 };
 
-export default Verbs;
+// export default Verbs;
 export const ConnectedVerbs = connect(mapStateToProps)(Verbs);

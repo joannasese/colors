@@ -1,5 +1,5 @@
 import React from 'react';
-import Verbs from './Verbs';
+import { ConnectedVerbs, Verbs } from './Verbs';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -19,8 +19,9 @@ class Madlibs extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-      console.log(this.state.verb)
+    // {verbs}.addVerb(this.state)
     this.props.addVerb(this.state);
+    console.log({ConnectedVerbs})
     // this.setState({
     //   verb: '',
     // });
@@ -29,7 +30,8 @@ class Madlibs extends React.Component {
   render() {
     return (
       <div>
-      <p>Number of verbs in Verbs array: {Verbs.length}</p>
+        <p>Number of verbs in Verbs array: {Verbs.length}</p>
+
         <p>It's madlib time! Provide a noun, an adjective and a verb. We'll give you a wacky phrase in return!</p>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <p>
@@ -44,6 +46,7 @@ class Madlibs extends React.Component {
         </form>
         <p>The ADJ NOUN likes to <strong>{this.state.verb}</strong> while drinking his coffee.</p>
       </div>
+
     )
   }
 }
@@ -58,10 +61,10 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-const addVerb = (word) => {
+const addVerb = (verb) => {
   return {
     type: 'ADD_VERB',
-    verb: word,
+    verb,
   }
 }
 
