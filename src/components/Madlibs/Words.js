@@ -4,25 +4,21 @@ import { phrases } from '../data';
 
 const Words = ({words}) =>
   <div>
-
-    {words.map((word, index) =>
+    <h2>
+      {words.map((word, index) =>
       // phrases.map((phrase) =>
       //   <h2 key={index}>{phrase}</h2>
       // )
 
-      {if (phrases[Math.floor(Math.random()*phrases.length)]){
-        const phrase = phrases[Math.floor(Math.random()*phrases.length)];
-        const newStr = phrase.replace(/NOUN/, word.noun)
-        return newStr
-      }
-    }
-
-
-    )}
-    {console.log({words})}
-
-
-
+        {if (word.noun && word.adj && word.verb){
+          const phrase = phrases[Math.floor(Math.random()*phrases.length)];
+          const newStr = phrase.replace(/NOUN/, word.noun).replace(/ADJ/, word.adj).replace(/VERB/, word.verb)
+          return newStr;
+        } else {
+          return "Hey, you forgot something!"
+        }}
+      )}
+    </h2>
   </div>
 
 function mapStateToProps (state){
