@@ -6,8 +6,7 @@ export function manageWords(state = {
     case 'ADD_WORDS':
       return Object.assign({}, state, {
         words: state.words
-        .concat(action.words.noun)
-        .concat(action.words.adj)
+        .concat({noun: action.words.noun, adj: action.words.adj, verb: action.words.verb})
       });
 
     default:

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 const Words = ({words}) =>
   <div>
     {words.map((word, index) =>
-      <h2 key={index}>{word}</h2>
+       <h2 key={index}>The {word.adj} {word.noun} enjoys {word.verb}ing.</h2>
     )}
     {console.log({words})}
    <p>`My sentence won't show!`</p>
