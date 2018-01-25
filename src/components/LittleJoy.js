@@ -21,17 +21,14 @@ export default class LittleJoy extends React.Component{
     super();
 
     this.state = {
-      videos
+      videos: videos
     }
   }
 
   render(){
     return (
         <div>
-          <iframe title="random-video" width="560" height="315" src={videos[Math.floor(Math.random()*videos.length)]}></iframe>
-          <div>
-            <button>I like this</button>
-          </div>
+          <iframe title="random-video" width="560" height="315" src={this.state.videos[Math.floor(Math.random()*this.state.videos.length)]}></iframe>
         </div>
       )
   }
