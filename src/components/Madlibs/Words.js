@@ -5,19 +5,16 @@ import { phrases } from '../data';
 const Words = ({words}) =>
   <div>
     <h2>
-      {words.map((word, index) =>
-      // phrases.map((phrase) =>
-      //   <h2 key={index}>{phrase}</h2>
-      // )
-
-        {if (word.noun && word.adj && word.verb){
+      {words.map((word, index) => {
+// There's probably a nicer way to accomplish this. Also, formatting needs fixing.
+        if (word.noun && word.adj && word.verb){
           const phrase = phrases[Math.floor(Math.random()*phrases.length)];
-          const newStr = phrase.replace(/NOUN/, word.noun).replace(/ADJ/, word.adj).replace(/VERB/, word.verb)
+          let newStr = phrase.replace(/NOUN/, word.noun).replace(/ADJ/, word.adj).replace(/VERB/, word.verb)
           return newStr;
         } else {
           return "Hey, you forgot something!"
-        }}
-      )}
+        }
+      })}
     </h2>
   </div>
 
