@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 const Words = ({words}) =>
   <div>
-
-   <p>{words}</p>
-      { console.log({words})}
+    {console.log({words})}
+   <p>`My sentence won't show!`</p>
   </div>
 
+// i think the culprit is mapStateToProps
 function mapStateToProps (state){
   return { words: state.words };
 };
 
-// export default Verbs;
 export const ConnectedWords = connect(mapStateToProps)(Words);

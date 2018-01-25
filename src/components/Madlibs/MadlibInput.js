@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConnectedWords, Words } from './Words';
+import { ConnectedWords } from './Words';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -33,6 +33,13 @@ export class Madlibs extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.addWords(this.state);
+    // this.state returns object {noun: '', adj: '', verb: ''}
+    console.log(this.state)
+    this.setState({
+      noun: '',
+      adj: '',
+      verb: ''
+    });
   }
 
   render() {
@@ -44,7 +51,7 @@ export class Madlibs extends React.Component {
             <label>Noun: </label>
             <input
               type="text"
-              // value={this.state.noun}
+              value={this.state.noun}
               onChange={(event) => this.handleNounChange(event)}
               placeholder="Ex: doohickey"
             />
@@ -53,7 +60,7 @@ export class Madlibs extends React.Component {
             <label>Adjective: </label>
             <input
               type="text"
-              // value={this.state.adj}
+              value={this.state.adj}
               onChange={(event) => this.handleAdjChange(event)}
               placeholder="Ex: cantankerous"
             />
@@ -62,7 +69,7 @@ export class Madlibs extends React.Component {
             <label>Verb: </label>
             <input
               type="text"
-              // value={this.state.verb}
+              value={this.state.verb}
               onChange={(event) => this.handleVerbChange(event)}
               placeholder = "Ex: defenestrate"
             />
@@ -78,7 +85,7 @@ export class Madlibs extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    addWords
+    addWords: addWords
   }, dispatch);
 };
 
