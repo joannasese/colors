@@ -4,16 +4,30 @@ import { phrases } from '../data';
 
 const Words = ({words}) =>
   <div>
+
     {words.map((word, index) =>
-       <h2 key={index}>The {word.adj} {word.noun} enjoys when I {word.verb}. {phrases}</h2>
+      // phrases.map((phrase) =>
+      //   <h2 key={index}>{phrase}</h2>
+      // )
+
+      {if (phrases[Math.floor(Math.random()*phrases.length)]){
+        const phrase = phrases[Math.floor(Math.random()*phrases.length)];
+        const newStr = phrase.replace(/NOUN/, word.noun)
+        return newStr
+      }
+    }
+
+
     )}
     {console.log({words})}
-    {console.log({phrases})}
+
+
+
   </div>
 
-// i think the culprit is mapStateToProps
 function mapStateToProps (state){
   return { words: state.words };
 };
 
 export const ConnectedWords = connect(mapStateToProps)(Words);
+export default Words;
