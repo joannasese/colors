@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './containers/App';
 import manageWords from './reducers/manageWords';
@@ -8,8 +9,7 @@ import manageWords from './reducers/manageWords';
 import registerServiceWorker from './registerServiceWorker';
 
 let store = createStore(manageWords,
-window.__REDUX_DEVTOOLS_EXTENSION__ &&
-window.__REDUX_DEVTOOLS_EXTENSION__());
+  applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
