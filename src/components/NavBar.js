@@ -21,6 +21,9 @@ const NavBar = () =>
         <LinkContainer to='/madlibs'>
           <NavItem>Madlibs</NavItem>
         </LinkContainer>
+        <LinkContainer to='/memes'>
+          <NavItem>Memes</NavItem>
+        </LinkContainer>
       </Nav>
     </Navbar>
   </div>

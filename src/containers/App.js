@@ -6,6 +6,7 @@ import LittleJoy from '../components/LittleJoy';
 import ColorBox from '../components/ColorBox';
 import Home from '../components/Home';
 import Madlibs from '../components/Madlibs/MadlibInput';
+import Memes from '../components/Memes';
 
 //stateless component
 const App = (props) => {
@@ -17,6 +18,7 @@ const App = (props) => {
         <Route exact path="/color-box" component={ColorBox} />
         <Route exact path="/little-joy" component={LittleJoy} />
         <Route exact path="/madlibs" component={Madlibs} />
+        <Route exact path="/memes" component={Memes} />
       </div>
     </Router>
   );
