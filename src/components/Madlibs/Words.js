@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { phrases } from '../data';
 
 const Words = ({words}) =>
   <div>
     {words.map((word, index) =>
-       <h2 key={index}>The {word.adj} {word.noun} enjoys {word.verb}ing.</h2>
+       <h2 key={index}>The {word.adj} {word.noun} enjoys when I {word.verb}. {phrases}</h2>
     )}
     {console.log({words})}
-   <p>`My sentence won't show!`</p>
+    {console.log({phrases})}
   </div>
 
 // i think the culprit is mapStateToProps

@@ -1,7 +1,7 @@
-[ ] Your app should have one HTML page to render your react-redux application
-[ ] There should be 2 container components
-[ ] There should be 5 stateless components
-[ ] There should be 3 routes
+[x] Your app should have one HTML page to render your react-redux application
+[ ]  There should be 2 container components
+[x] There should be 5 stateless components
+[x] There should be 3 routes
 [ ] The Application must make use of react-router and proper RESTful routing (should you choose to use react-router v3 please refer to the appropriate docs; docs for v4 can be found here)
 [ ] Use Redux middleware to respond to and modify state change
 [ ] Make use of async actions to send data to and receive data from a server

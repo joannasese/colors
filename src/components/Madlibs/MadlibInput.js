@@ -76,7 +76,6 @@ export class Madlibs extends React.Component {
           </p>
           <input type="submit" />
         </form>
-        <p>The <strong>{this.state.adj} {this.state.noun}</strong> likes to <strong>{this.state.verb}</strong> while drinking his coffee.</p>
         <ConnectedWords/>
       </div>
     )
