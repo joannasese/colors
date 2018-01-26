@@ -18,3 +18,23 @@ export function memesFetchDataSuccess(memes) {
         memes
     };
 }
+
+export function memesFetchData(url) {
+    return (dispatch) => {
+        dispatch(memesIsLoading(true));
+
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+
+                dispatch(memesIsLoading(false));
+
+                return response;
+            })
+            .then((response) => response.json())
+            .then((memes) => dispatch(memesFetchDataSuccess(memes)))
+            .catch(() => dispatch(memesHasErrored(true)));
+    };
+}

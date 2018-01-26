@@ -4,12 +4,12 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './containers/App';
+import configureStore from './store/configureStore';
 import manageWords from './reducers/manageWords';
 
 import registerServiceWorker from './registerServiceWorker';
 
-let store = createStore(manageWords,
-  applyMiddleware(thunk));
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
