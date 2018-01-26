@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { phrases } from '../data';
+import { phrases } from './data';
 
 const Words = ({words}) =>
   <div>

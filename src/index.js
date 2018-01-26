@@ -9,7 +9,11 @@ import manageWords from './reducers/manageWords';
 
 import registerServiceWorker from './registerServiceWorker';
 
-const store = configureStore();
+// const store = configureStore();
+const store = createStore(manageWords,
+window.__REDUX_DEVTOOLS_EXTENSION__ &&
+window.__REDUX_DEVTOOLS_EXTENSION__());
+
 
 ReactDOM.render(
   <Provider store={store}>

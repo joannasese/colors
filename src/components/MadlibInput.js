@@ -2,6 +2,7 @@ import React from 'react';
 import { ConnectedWords } from './Words';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { addWords } from '../actions/addWords';
 
 export class Madlibs extends React.Component {
   constructor(props){
@@ -88,12 +89,12 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-const addWords = (words) => {
-  return {
-    type: 'ADD_WORDS',
-    words,
-  };
-};
+// const addWords = (words) => {
+//   return {
+//     type: 'ADD_WORDS',
+//     words,
+//   };
+// };
 
 export default connect(null, mapDispatchToProps)(Madlibs);
 
