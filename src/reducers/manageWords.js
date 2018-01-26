@@ -2,7 +2,6 @@ export function manageWords(state = {
   words: []
 }, action) {
   switch (action.type) {
-
     case 'ADD_WORDS':
       return Object.assign({}, state, {
         words: state.words
@@ -12,10 +11,8 @@ export function manageWords(state = {
           verb: action.words.verb
         })
       });
-
     default:
       return state;
-
   }
 };
 

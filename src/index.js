@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
 import manageWords from './reducers/manageWords';
-
 import registerServiceWorker from './registerServiceWorker';
 
-// const store = configureStore();
-const store = createStore(manageWords,
-window.__REDUX_DEVTOOLS_EXTENSION__ &&
-window.__REDUX_DEVTOOLS_EXTENSION__());
-
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>

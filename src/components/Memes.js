@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { memesFetchData } from '../actions/memes';
 
-class Memes extends Component {
+export class Memes extends Component {
     componentDidMount() {
       // this.props.fetchData('https://api.imgflip.com/get_memes');
-      this.props.fetchData('./api')
+      // this.props.fetchData('./api')
       // this.props.fetchData('https://jsonplaceholder.typicode.com/posts')
-      // this.props.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
+      this.props.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
     }
 
     render() {
@@ -22,8 +22,11 @@ console.log(this.props.memes)
 
             <ul>
                 {this.props.memes.map((meme) => (
+                    // <li key={meme.id}>
+                    //     <img src={meme.url} alt="img"/>
+                    // </li>
                     <li key={meme.id}>
-                        <img src={meme.url} alt="img"/>
+                        {meme.label}
                     </li>
                 ))}
             </ul>

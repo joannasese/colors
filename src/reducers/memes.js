@@ -1,11 +1,10 @@
 export function memesHasErrored(state = false, action) {
-    switch (action.type) {
-        case 'MEMES_HAS_ERRORED':
-            return action.hasErrored;
-
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case 'MEMES_HAS_ERRORED':
+      return action.hasErrored;
+    default:
+      return state;
+  }
 }
 
 export function memesIsLoading(state = false, action) {
